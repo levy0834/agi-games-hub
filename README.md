@@ -1,15 +1,20 @@
-# AGI 游戏试玩集合
+# H5 游戏原型合集
 
-一个可直接对外分享的静态聚合页，用于集中展示今日 AGI 游戏原型。
+一个集中展示近期 H5 / 微信小游戏原型的试玩入口页。
 
-## 页面内容
+## 当前收录
 - 最后的人类公司
 - AGI避难所
+- 福气翻翻乐
+- 点点击破
+- 小鱼躲管道
+- 合成大西瓜 Demo
 
 ## 本地预览
-该项目无依赖、无需安装：
+无需安装依赖：
 
 ```bash
+cd /Users/levy/.openclaw/workspace/projects/agi-games-hub
 python3 -m http.server 8000
 ```
 
@@ -20,6 +25,7 @@ python3 -m http.server 8000
 - 文件：`.github/workflows/deploy-pages.yml`
 - 触发：推送到 `main` 或手动触发
 - 发布源：GitHub Actions
+- 线上地址：<https://levy0834.github.io/agi-games-hub/>
 
 ## 输出文件
 - `index.html`

@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AGI 游戏试玩集合</title>
+    <title>H5 游戏原型合集</title>
     <meta
       name="description"
-      content="AGI 游戏试玩集合：一个可直接试玩的今日原型实验入口页。"
+      content="一个集中展示近期 H5 / 微信小游戏原型的试玩入口页。"
     />
     <style>
       :root {
@@ -21,50 +21,22 @@
         --neon-pink: #ff5fa2;
         --shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
       }
-
-      * {
-        box-sizing: border-box;
-      }
-
+      * { box-sizing: border-box; }
       body {
         margin: 0;
         min-height: 100vh;
         font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
         color: var(--text);
-        background: radial-gradient(circle at 20% -10%, rgba(75, 227, 255, 0.15), transparent 40%),
+        background:
+          radial-gradient(circle at 20% -10%, rgba(75, 227, 255, 0.15), transparent 40%),
           radial-gradient(circle at 90% 10%, rgba(255, 95, 162, 0.12), transparent 42%),
           linear-gradient(160deg, var(--bg), var(--bg-alt));
       }
-
-      .container {
-        width: min(1080px, 92vw);
-        margin: 0 auto;
-        padding: 56px 0 28px;
-      }
-
-      .hero {
-        margin-bottom: 28px;
-      }
-
-      .hero h1 {
-        margin: 0;
-        font-size: clamp(2rem, 5vw, 3.2rem);
-        letter-spacing: 0.04em;
-      }
-
-      .hero p {
-        margin: 14px 0 0;
-        max-width: 62ch;
-        color: var(--muted);
-        line-height: 1.7;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-      }
-
+      .container { width: min(1180px, 92vw); margin: 0 auto; padding: 56px 0 28px; }
+      .hero { margin-bottom: 28px; }
+      .hero h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: 0.04em; }
+      .hero p { margin: 14px 0 0; max-width: 70ch; color: var(--muted); line-height: 1.75; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; }
       .card {
         position: relative;
         background: var(--panel);
@@ -73,9 +45,8 @@
         padding: 20px;
         box-shadow: var(--shadow);
         backdrop-filter: blur(6px);
-        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
       }
-
       .card::before {
         content: "";
         position: absolute;
@@ -89,171 +60,79 @@
         mask-composite: exclude;
         opacity: 0.35;
       }
-
-      .card:hover {
-        transform: translateY(-4px);
-        border-color: rgba(75, 227, 255, 0.45);
-        box-shadow: 0 26px 50px rgba(0, 0, 0, 0.55);
-      }
-
-      .card h2 {
-        margin: 0;
-        font-size: 1.35rem;
-      }
-
-      .desc {
-        margin: 12px 0 16px;
-        color: var(--muted);
-        line-height: 1.7;
-      }
-
-      .label-group {
-        margin: 12px 0;
-      }
-
-      .label-title {
-        font-size: 0.86rem;
-        letter-spacing: 0.06em;
-        color: #c6d4f3;
-        text-transform: uppercase;
-        margin-bottom: 8px;
-      }
-
-      .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .tag {
-        display: inline-block;
-        padding: 5px 10px;
-        border-radius: 999px;
-        font-size: 0.83rem;
-        color: #dbe5ff;
-        border: 1px solid rgba(111, 139, 255, 0.38);
-        background: rgba(111, 139, 255, 0.12);
-      }
-
-      .links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 18px;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px 14px;
-        border-radius: 10px;
-        font-weight: 700;
-        text-decoration: none;
-        border: 1px solid transparent;
-      }
-
-      .btn-play {
-        background: linear-gradient(120deg, var(--neon-cyan), var(--neon-blue));
-        color: #00141d;
-      }
-
-      .btn-repo {
-        color: #d7e6ff;
-        border-color: rgba(255, 255, 255, 0.26);
-        background: rgba(255, 255, 255, 0.04);
-      }
-
-      footer {
-        margin-top: 30px;
-        text-align: center;
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
-      @media (max-width: 640px) {
-        .container {
-          padding-top: 36px;
-        }
-
-        .card {
-          padding: 18px;
-        }
-
-        .links .btn {
-          width: 100%;
-        }
-      }
+      .card:hover { transform: translateY(-4px); border-color: rgba(75, 227, 255, 0.45); box-shadow: 0 26px 50px rgba(0,0,0,.55); }
+      .card h2 { margin: 0; font-size: 1.35rem; }
+      .desc { margin: 12px 0 16px; color: var(--muted); line-height: 1.7; min-height: 4.8em; }
+      .label-group { margin: 12px 0; }
+      .label-title { font-size: .86rem; letter-spacing: .06em; color: #c6d4f3; text-transform: uppercase; margin-bottom: 8px; }
+      .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+      .tag { display: inline-block; padding: 5px 10px; border-radius: 999px; font-size: .83rem; color: #dbe5ff; border: 1px solid rgba(111,139,255,.38); background: rgba(111,139,255,.12); }
+      .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+      .btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 14px; border-radius: 10px; font-weight: 700; text-decoration: none; border: 1px solid transparent; }
+      .btn-play { background: linear-gradient(120deg, var(--neon-cyan), var(--neon-blue)); color: #00141d; }
+      .btn-repo { color: #d7e6ff; border-color: rgba(255,255,255,.26); background: rgba(255,255,255,.04); }
+      footer { margin-top: 30px; text-align: center; color: var(--muted); font-size: .95rem; }
+      @media (max-width: 640px) { .container { padding-top: 36px; } .card { padding: 18px; } .links .btn { width: 100%; } }
     </style>
   </head>
   <body>
     <main class="container">
       <header class="hero">
-        <h1>AGI 游戏试玩集合</h1>
-        <p>这里汇总了今天产出的两个 AGI 主题游戏原型。点击卡片即可快速试玩，并查看各项目仓库代码。</p>
+        <h1>H5 游戏原型合集</h1>
+        <p>这里汇总了近期做出来的一批 H5 / 微信小游戏原型。每个项目都附了试玩入口、GitHub 仓库、类型标签和元素标签，方便你统一浏览、试玩和继续迭代。</p>
       </header>
 
       <section class="grid" aria-label="游戏列表">
         <article class="card">
           <h2>最后的人类公司</h2>
-          <p class="desc">在 AGI 时代经营一家“最后的人类公司”，在效率与人味之间做选择。</p>
-
-          <div class="label-group">
-            <div class="label-title">类型</div>
-            <div class="tags">
-              <span class="tag">策略</span>
-              <span class="tag">经营</span>
-              <span class="tag">肉鸽原型</span>
-            </div>
-          </div>
-
-          <div class="label-group">
-            <div class="label-title">元素</div>
-            <div class="tags">
-              <span class="tag">AGI</span>
-              <span class="tag">公司经营</span>
-              <span class="tag">资源管理</span>
-              <span class="tag">人性抉择</span>
-            </div>
-          </div>
-
-          <div class="links">
-            <a class="btn btn-play" href="https://levy0834.github.io/agi-human-company-demo/" target="_blank" rel="noopener noreferrer">立即试玩</a>
-            <a class="btn btn-repo" href="https://github.com/levy0834/agi-human-company-demo" target="_blank" rel="noopener noreferrer">GitHub 仓库</a>
-          </div>
+          <p class="desc">在 AGI 时代经营一家“最后的人类公司”，在效率、算力和人味之间做权衡。</p>
+          <div class="label-group"><div class="label-title">类型</div><div class="tags"><span class="tag">策略</span><span class="tag">经营</span><span class="tag">肉鸽原型</span></div></div>
+          <div class="label-group"><div class="label-title">元素</div><div class="tags"><span class="tag">AGI</span><span class="tag">公司经营</span><span class="tag">资源管理</span><span class="tag">人性抉择</span></div></div>
+          <div class="links"><a class="btn btn-play" href="https://levy0834.github.io/agi-human-company-demo/" target="_blank" rel="noopener noreferrer">立即试玩</a><a class="btn btn-repo" href="https://github.com/levy0834/agi-human-company-demo" target="_blank" rel="noopener noreferrer">GitHub 仓库</a></div>
         </article>
 
         <article class="card">
           <h2>AGI避难所</h2>
-          <p class="desc">在算法统治后的废墟中经营地下避难所，在秩序、技术与希望之间求生。</p>
+          <p class="desc">在算法统治后的废墟中经营地下避难所，在秩序、技术与希望之间艰难求生。</p>
+          <div class="label-group"><div class="label-title">类型</div><div class="tags"><span class="tag">生存策略</span><span class="tag">末日经营</span><span class="tag">路线构筑</span></div></div>
+          <div class="label-group"><div class="label-title">元素</div><div class="tags"><span class="tag">AGI</span><span class="tag">避难所</span><span class="tag">资源管理</span><span class="tag">生存抉择</span></div></div>
+          <div class="links"><a class="btn btn-play" href="https://levy0834.github.io/agi-shelter-demo/" target="_blank" rel="noopener noreferrer">立即试玩</a><a class="btn btn-repo" href="https://github.com/levy0834/agi-shelter-demo" target="_blank" rel="noopener noreferrer">GitHub 仓库</a></div>
+        </article>
 
-          <div class="label-group">
-            <div class="label-title">类型</div>
-            <div class="tags">
-              <span class="tag">生存策略</span>
-              <span class="tag">末日经营</span>
-              <span class="tag">路线构筑</span>
-            </div>
-          </div>
+        <article class="card">
+          <h2>福气翻翻乐</h2>
+          <p class="desc">面向老年人体验优化的轻松配对小游戏：大字、大按钮、低压力、几秒就能上手。</p>
+          <div class="label-group"><div class="label-title">类型</div><div class="tags"><span class="tag">休闲</span><span class="tag">记忆配对</span><span class="tag">适老游戏</span></div></div>
+          <div class="label-group"><div class="label-title">元素</div><div class="tags"><span class="tag">微信H5</span><span class="tag">大字界面</span><span class="tag">低门槛</span><span class="tag">配对记忆</span></div></div>
+          <div class="links"><a class="btn btn-play" href="https://levy0834.github.io/elder-wechat-h5-memory-demo/" target="_blank" rel="noopener noreferrer">立即试玩</a><a class="btn btn-repo" href="https://github.com/levy0834/elder-wechat-h5-memory-demo" target="_blank" rel="noopener noreferrer">GitHub 仓库</a></div>
+        </article>
 
-          <div class="label-group">
-            <div class="label-title">元素</div>
-            <div class="tags">
-              <span class="tag">AGI</span>
-              <span class="tag">避难所</span>
-              <span class="tag">资源管理</span>
-              <span class="tag">生存抉择</span>
-            </div>
-          </div>
+        <article class="card">
+          <h2>点点击破</h2>
+          <p class="desc">节奏很快的生存点击小游戏，带连击、狂热、技能和挑战分享卡，更偏轻量街机爽感。</p>
+          <div class="label-group"><div class="label-title">类型</div><div class="tags"><span class="tag">点击生存</span><span class="tag">街机</span><span class="tag">爽游MVP</span></div></div>
+          <div class="label-group"><div class="label-title">元素</div><div class="tags"><span class="tag">连击</span><span class="tag">技能充能</span><span class="tag">分享挑战</span><span class="tag">移动端</span></div></div>
+          <div class="links"><a class="btn btn-play" href="https://levy0834.github.io/h5-click-survival-mvp/" target="_blank" rel="noopener noreferrer">立即试玩</a><a class="btn btn-repo" href="https://github.com/levy0834/h5-click-survival-mvp" target="_blank" rel="noopener noreferrer">GitHub 仓库</a></div>
+        </article>
 
-          <div class="links">
-            <a class="btn btn-play" href="https://levy0834.github.io/agi-shelter-demo/" target="_blank" rel="noopener noreferrer">立即试玩</a>
-            <a class="btn btn-repo" href="https://github.com/levy0834/agi-shelter-demo" target="_blank" rel="noopener noreferrer">GitHub 仓库</a>
-          </div>
+        <article class="card">
+          <h2>小鱼躲管道</h2>
+          <p class="desc">适合微信里直接打开的轻量 H5 小游戏，点击让小鱼上浮，躲开管道并刷新最高分。</p>
+          <div class="label-group"><div class="label-title">类型</div><div class="tags"><span class="tag">休闲</span><span class="tag">反应挑战</span><span class="tag">微信H5</span></div></div>
+          <div class="label-group"><div class="label-title">元素</div><div class="tags"><span class="tag">点击飞行</span><span class="tag">障碍闪避</span><span class="tag">高分挑战</span><span class="tag">本地存档</span></div></div>
+          <div class="links"><a class="btn btn-play" href="https://levy0834.github.io/wechat-h5-game-demo/" target="_blank" rel="noopener noreferrer">立即试玩</a><a class="btn btn-repo" href="https://github.com/levy0834/wechat-h5-game-demo" target="_blank" rel="noopener noreferrer">GitHub 仓库</a></div>
+        </article>
+
+        <article class="card">
+          <h2>合成大西瓜 Demo</h2>
+          <p class="desc">微信 H5 静态版合成大西瓜原型，左右拖动、投放水果、不断合成更大的目标。</p>
+          <div class="label-group"><div class="label-title">类型</div><div class="tags"><span class="tag">休闲</span><span class="tag">合成</span><span class="tag">物理堆叠</span></div></div>
+          <div class="label-group"><div class="label-title">元素</div><div class="tags"><span class="tag">水果合成</span><span class="tag">微信H5</span><span class="tag">物理碰撞</span><span class="tag">高分挑战</span></div></div>
+          <div class="links"><a class="btn btn-play" href="https://levy0834.github.io/wechat-h5-suika-demo/" target="_blank" rel="noopener noreferrer">立即试玩</a><a class="btn btn-repo" href="https://github.com/levy0834/wechat-h5-suika-demo" target="_blank" rel="noopener noreferrer">GitHub 仓库</a></div>
         </article>
       </section>
 
-      <footer>今日原型实验集</footer>
+      <footer>游戏原型试玩入口 · 持续更新中</footer>
     </main>
   </body>
 </html>
