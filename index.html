@@ -20,6 +20,7 @@
         --neon-blue: #6f8bff;
         --neon-pink: #ff5fa2;
         --shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+        --badge: #ffd54a;
       }
       * { box-sizing: border-box; }
       body {
@@ -62,6 +63,18 @@
       }
       .card:hover { transform: translateY(-4px); border-color: rgba(75, 227, 255, 0.45); box-shadow: 0 26px 50px rgba(0,0,0,.55); }
       .card h2 { margin: 0; font-size: 1.35rem; }
+      .card-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+      .latest-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 999px;
+        font-size: .78rem;
+        font-weight: 800;
+        color: #241400;
+        background: linear-gradient(120deg, var(--badge), #ff9f43);
+        box-shadow: 0 6px 18px rgba(255, 170, 0, 0.25);
+      }
       .desc { margin: 12px 0 16px; color: var(--muted); line-height: 1.7; min-height: 4.8em; }
       .label-group { margin: 12px 0; }
       .label-title { font-size: .86rem; letter-spacing: .06em; color: #c6d4f3; text-transform: uppercase; margin-bottom: 8px; }
@@ -84,7 +97,18 @@
 
       <section class="grid" aria-label="游戏列表">
         <article class="card">
-          <h2>最后的人类公司</h2>
+          <div class="card-head">
+            <h2>老板说反着来</h2>
+            <span class="latest-badge">最新上线</span>
+          </div>
+          <p class="desc">一眼就懂的魔性反应挑战：看老板指令操作，但规则会突然反转，越自信越容易当场翻车。</p>
+          <div class="label-group"><div class="label-title">类型</div><div class="tags"><span class="tag">微信H5</span><span class="tag">魔性挑战</span><span class="tag">高分炫耀</span></div></div>
+          <div class="label-group"><div class="label-title">元素</div><div class="tags"><span class="tag">规则反转</span><span class="tag">红蓝按钮</span><span class="tag">短局冲分</span><span class="tag">挑战文案复制</span></div></div>
+          <div class="links"><a class="btn btn-play" href="https://levy0834.github.io/wechat-h5-ruleflip-rush/" target="_blank" rel="noopener noreferrer">立即试玩</a><a class="btn btn-repo" href="https://github.com/levy0834/wechat-h5-ruleflip-rush" target="_blank" rel="noopener noreferrer">GitHub 仓库</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-head"><h2>最后的人类公司</h2></div>
           <p class="desc">在 AGI 时代经营一家“最后的人类公司”，在效率、算力和人味之间做权衡。</p>
           <div class="label-group"><div class="label-title">类型</div><div class="tags"><span class="tag">策略</span><span class="tag">经营</span><span class="tag">肉鸽原型</span></div></div>
           <div class="label-group"><div class="label-title">元素</div><div class="tags"><span class="tag">AGI</span><span class="tag">公司经营</span><span class="tag">资源管理</span><span class="tag">人性抉择</span></div></div>
@@ -92,7 +116,7 @@
         </article>
 
         <article class="card">
-          <h2>AGI避难所</h2>
+          <div class="card-head"><h2>AGI避难所</h2></div>
           <p class="desc">在算法统治后的废墟中经营地下避难所，在秩序、技术与希望之间艰难求生。</p>
           <div class="label-group"><div class="label-title">类型</div><div class="tags"><span class="tag">生存策略</span><span class="tag">末日经营</span><span class="tag">路线构筑</span></div></div>
           <div class="label-group"><div class="label-title">元素</div><div class="tags"><span class="tag">AGI</span><span class="tag">避难所</span><span class="tag">资源管理</span><span class="tag">生存抉择</span></div></div>
@@ -100,7 +124,7 @@
         </article>
 
         <article class="card">
-          <h2>福气翻翻乐</h2>
+          <div class="card-head"><h2>福气翻翻乐</h2></div>
           <p class="desc">面向老年人体验优化的轻松配对小游戏：大字、大按钮、低压力、几秒就能上手。</p>
           <div class="label-group"><div class="label-title">类型</div><div class="tags"><span class="tag">休闲</span><span class="tag">记忆配对</span><span class="tag">适老游戏</span></div></div>
           <div class="label-group"><div class="label-title">元素</div><div class="tags"><span class="tag">微信H5</span><span class="tag">大字界面</span><span class="tag">低门槛</span><span class="tag">配对记忆</span></div></div>
@@ -108,7 +132,7 @@
         </article>
 
         <article class="card">
-          <h2>点点击破</h2>
+          <div class="card-head"><h2>点点击破</h2></div>
           <p class="desc">节奏很快的生存点击小游戏，带连击、狂热、技能和挑战分享卡，更偏轻量街机爽感。</p>
           <div class="label-group"><div class="label-title">类型</div><div class="tags"><span class="tag">点击生存</span><span class="tag">街机</span><span class="tag">爽游MVP</span></div></div>
           <div class="label-group"><div class="label-title">元素</div><div class="tags"><span class="tag">连击</span><span class="tag">技能充能</span><span class="tag">分享挑战</span><span class="tag">移动端</span></div></div>
@@ -116,7 +140,7 @@
         </article>
 
         <article class="card">
-          <h2>小鱼躲管道</h2>
+          <div class="card-head"><h2>小鱼躲管道</h2></div>
           <p class="desc">适合微信里直接打开的轻量 H5 小游戏，点击让小鱼上浮，躲开管道并刷新最高分。</p>
           <div class="label-group"><div class="label-title">类型</div><div class="tags"><span class="tag">休闲</span><span class="tag">反应挑战</span><span class="tag">微信H5</span></div></div>
           <div class="label-group"><div class="label-title">元素</div><div class="tags"><span class="tag">点击飞行</span><span class="tag">障碍闪避</span><span class="tag">高分挑战</span><span class="tag">本地存档</span></div></div>
@@ -124,7 +148,7 @@
         </article>
 
         <article class="card">
-          <h2>合成大西瓜 Demo</h2>
+          <div class="card-head"><h2>合成大西瓜 Demo</h2></div>
           <p class="desc">微信 H5 静态版合成大西瓜原型，左右拖动、投放水果、不断合成更大的目标。</p>
           <div class="label-group"><div class="label-title">类型</div><div class="tags"><span class="tag">休闲</span><span class="tag">合成</span><span class="tag">物理堆叠</span></div></div>
           <div class="label-group"><div class="label-title">元素</div><div class="tags"><span class="tag">水果合成</span><span class="tag">微信H5</span><span class="tag">物理碰撞</span><span class="tag">高分挑战</span></div></div>
