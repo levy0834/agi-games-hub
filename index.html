@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AGI 游戏试玩集合</title>
+    <meta
+      name="description"
+      content="AGI 游戏试玩集合：一个可直接试玩的今日原型实验入口页。"
+    />
+    <style>
+      :root {
+        --bg: #06080f;
+        --bg-alt: #0d1220;
+        --panel: rgba(11, 17, 32, 0.78);
+        --text: #e8f0ff;
+        --muted: #9db0d9;
+        --line: rgba(137, 177, 255, 0.2);
+        --neon-cyan: #4be3ff;
+        --neon-blue: #6f8bff;
+        --neon-pink: #ff5fa2;
+        --shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+        color: var(--text);
+        background: radial-gradient(circle at 20% -10%, rgba(75, 227, 255, 0.15), transparent 40%),
+          radial-gradient(circle at 90% 10%, rgba(255, 95, 162, 0.12), transparent 42%),
+          linear-gradient(160deg, var(--bg), var(--bg-alt));
+      }
+
+      .container {
+        width: min(1080px, 92vw);
+        margin: 0 auto;
+        padding: 56px 0 28px;
+      }
+
+      .hero {
+        margin-bottom: 28px;
+      }
+
+      .hero h1 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        letter-spacing: 0.04em;
+      }
+
+      .hero p {
+        margin: 14px 0 0;
+        max-width: 62ch;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        position: relative;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(6px);
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        pointer-events: none;
+        border: 1px solid transparent;
+        background: linear-gradient(120deg, rgba(75, 227, 255, 0.5), rgba(255, 95, 162, 0.35)) border-box;
+        -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0.35;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(75, 227, 255, 0.45);
+        box-shadow: 0 26px 50px rgba(0, 0, 0, 0.55);
+      }
+
+      .card h2 {
+        margin: 0;
+        font-size: 1.35rem;
+      }
+
+      .desc {
+        margin: 12px 0 16px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .label-group {
+        margin: 12px 0;
+      }
+
+      .label-title {
+        font-size: 0.86rem;
+        letter-spacing: 0.06em;
+        color: #c6d4f3;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 999px;
+        font-size: 0.83rem;
+        color: #dbe5ff;
+        border: 1px solid rgba(111, 139, 255, 0.38);
+        background: rgba(111, 139, 255, 0.12);
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 700;
+        text-decoration: none;
+        border: 1px solid transparent;
+      }
+
+      .btn-play {
+        background: linear-gradient(120deg, var(--neon-cyan), var(--neon-blue));
+        color: #00141d;
+      }
+
+      .btn-repo {
+        color: #d7e6ff;
+        border-color: rgba(255, 255, 255, 0.26);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      footer {
+        margin-top: 30px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          padding-top: 36px;
+        }
+
+        .card {
+          padding: 18px;
+        }
+
+        .links .btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <h1>AGI 游戏试玩集合</h1>
+        <p>这里汇总了今天产出的两个 AGI 主题游戏原型。点击卡片即可快速试玩，并查看各项目仓库代码。</p>
+      </header>
+
+      <section class="grid" aria-label="游戏列表">
+        <article class="card">
+          <h2>最后的人类公司</h2>
+          <p class="desc">在 AGI 时代经营一家“最后的人类公司”，在效率与人味之间做选择。</p>
+
+          <div class="label-group">
+            <div class="label-title">类型</div>
+            <div class="tags">
+              <span class="tag">策略</span>
+              <span class="tag">经营</span>
+              <span class="tag">肉鸽原型</span>
+            </div>
+          </div>
+
+          <div class="label-group">
+            <div class="label-title">元素</div>
+            <div class="tags">
+              <span class="tag">AGI</span>
+              <span class="tag">公司经营</span>
+              <span class="tag">资源管理</span>
+              <span class="tag">人性抉择</span>
+            </div>
+          </div>
+
+          <div class="links">
+            <a class="btn btn-play" href="https://levy0834.github.io/agi-human-company-demo/" target="_blank" rel="noopener noreferrer">立即试玩</a>
+            <a class="btn btn-repo" href="https://github.com/levy0834/agi-human-company-demo" target="_blank" rel="noopener noreferrer">GitHub 仓库</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>AGI避难所</h2>
+          <p class="desc">在算法统治后的废墟中经营地下避难所，在秩序、技术与希望之间求生。</p>
+
+          <div class="label-group">
+            <div class="label-title">类型</div>
+            <div class="tags">
+              <span class="tag">生存策略</span>
+              <span class="tag">末日经营</span>
+              <span class="tag">路线构筑</span>
+            </div>
+          </div>
+
+          <div class="label-group">
+            <div class="label-title">元素</div>
+            <div class="tags">
+              <span class="tag">AGI</span>
+              <span class="tag">避难所</span>
+              <span class="tag">资源管理</span>
+              <span class="tag">生存抉择</span>
+            </div>
+          </div>
+
+          <div class="links">
+            <a class="btn btn-play" href="https://levy0834.github.io/agi-shelter-demo/" target="_blank" rel="noopener noreferrer">立即试玩</a>
+            <a class="btn btn-repo" href="https://github.com/levy0834/agi-shelter-demo" target="_blank" rel="noopener noreferrer">GitHub 仓库</a>
+          </div>
+        </article>
+      </section>
+
+      <footer>今日原型实验集</footer>
+    </main>
+  </body>
+</html>
