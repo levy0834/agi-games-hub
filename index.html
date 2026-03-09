@@ -21,6 +21,7 @@
         --neon-pink: #ff5fa2;
         --shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
         --badge: #ffd54a;
+        --warn: #ffbe5c;
       }
       * { box-sizing: border-box; }
       body {
@@ -75,6 +76,16 @@
         background: linear-gradient(120deg, var(--badge), #ff9f43);
         box-shadow: 0 6px 18px rgba(255, 170, 0, 0.25);
       }
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 999px;
+        font-size: .78rem;
+        font-weight: 800;
+        color: #2b1900;
+        background: linear-gradient(120deg, #ffd6a0, var(--warn));
+      }
       .desc { margin: 12px 0 16px; color: var(--muted); line-height: 1.7; min-height: 4.8em; }
       .label-group { margin: 12px 0; }
       .label-title { font-size: .86rem; letter-spacing: .06em; color: #c6d4f3; text-transform: uppercase; margin-bottom: 8px; }
@@ -84,6 +95,7 @@
       .btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 14px; border-radius: 10px; font-weight: 700; text-decoration: none; border: 1px solid transparent; }
       .btn-play { background: linear-gradient(120deg, var(--neon-cyan), var(--neon-blue)); color: #00141d; }
       .btn-repo { color: #d7e6ff; border-color: rgba(255,255,255,.26); background: rgba(255,255,255,.04); }
+      .btn-muted { color: #f7d8a8; border-color: rgba(255,190,92,.45); background: rgba(255,190,92,.08); cursor: default; }
       footer { margin-top: 30px; text-align: center; color: var(--muted); font-size: .95rem; }
       @media (max-width: 640px) { .container { padding-top: 36px; } .card { padding: 18px; } .links .btn { width: 100%; } }
     </style>
@@ -100,8 +112,19 @@
 
         <article class="card">
           <div class="card-head">
-            <h2>斗图包赢王</h2>
+            <h2>别眨眼：3秒装高手</h2>
             <span class="latest-badge">最新上线</span>
+            <span class="status-badge">试玩部署待恢复</span>
+          </div>
+          <p class="desc">盯住会乱跳的秒表，在 3 秒附近按下定格。看着像简单停表，实际上会被假减速、轻抖动和自己的节奏感反杀，特别适合晒“我只差 0.01 秒”。</p>
+          <div class="label-group"><div class="label-title">类型</div><div class="tags"><span class="tag">微信H5</span><span class="tag">魔性挑战</span><span class="tag">高分炫耀</span></div></div>
+          <div class="label-group"><div class="label-title">元素</div><div class="tags"><span class="tag">秒表卡点</span><span class="tag">时间错觉</span><span class="tag">三回合冲分</span><span class="tag">挑战文案复制</span></div></div>
+          <div class="links"><span class="btn btn-muted">试玩链接待恢复后补上</span><a class="btn btn-repo" href="https://github.com/levy0834/wechat-h5-dont-blink-king" target="_blank" rel="noopener noreferrer">GitHub 仓库</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h2>斗图包赢王</h2>
           </div>
           <p class="desc">30 秒内给群聊消息甩出最对味的表情包：接得越骚连击越高，发错或太慢直接冷场；还会遇到“老板在群里 / 长辈在群里 / 禁用表情”的反转压力。</p>
           <div class="label-group"><div class="label-title">类型</div><div class="tags"><span class="tag">微信H5</span><span class="tag">社交梗挑战</span><span class="tag">高分炫耀</span></div></div>
@@ -285,4 +308,5 @@
     </main>
   </body>
 </html>
+
 
